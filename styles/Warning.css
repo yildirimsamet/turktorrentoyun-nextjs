@@ -1,0 +1,26 @@
+.warning {
+  border: none !important;
+  max-width: 50%;
+}
+.warning-header {
+  background: transparent !important;
+  /* background: #8e0e00 !important;
+  background: -webkit-linear-gradient(to right, #1f1c18, #8e0e00) !important;
+  background: linear-gradient(to right, #1f1c18, #8e0e00) !important; */
+  font-size: 22px;
+  color: orange !important;
+}
+.warning-body {
+  background: transparent !important;
+  /* background: #8e0e00 !important;
+  background: -webkit-linear-gradient(to right, #1f1c18, #8e0e00) !important;
+  background: linear-gradient(to right, #1f1c18, #8e0e00) !important; */
+}
+.warning-title {
+  color: rgba(255, 166, 0, 0.651) !important;
+}
+@media only screen and (max-width: 540px) {
+  .warning {
+    max-width: 100%;
+  }
+}

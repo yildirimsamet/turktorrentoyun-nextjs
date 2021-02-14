@@ -1,0 +1,72 @@
+.donate-container {
+  margin-top: 60px;
+  padding-top: 80px;
+  padding-bottom: 150px;
+  overflow: hidden;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  max-width: 1300px !important;
+}
+.donate-main-title,
+.donate-secondary-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donate-main-title > h1 {
+  font-weight: 500;
+  font-size: 20px;
+  color: orange;
+}
+.donate-accounts {
+  margin-top: 50px;
+}
+.donate-accounts > p {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  padding-left: 35px;
+  word-break: break-all;
+}
+.donate-accounts > p > span {
+  margin-left: 5px;
+}
+.donate-accounts > p > span > span {
+  font-weight: bold;
+}
+.site-info > h2 {
+  color: rgb(201, 29, 29);
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.site-info-content {
+  padding-left: 35px;
+  margin: 15px 0;
+}
+@media only screen and (max-width: 540px) {
+  .donate-accounts > p {
+    margin: 25px 0;
+    padding: 0 10px;
+    line-height: 1.3;
+  }
+  .donate-main-title {
+    flex-direction: column-reverse;
+  }
+  .donate-main-title > h1 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+  }
+  .donate-accounts > p > img {
+    align-self: flex-start;
+  }
+  .site-info-content {
+    padding: 0 10px;
+  }
+}
