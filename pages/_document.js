@@ -7,6 +7,11 @@ class MyDocument extends Document {
         <Head />
         <head>
           <script
+            data-ad-client="ca-pub-2743431608715099"
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          ></script>
+          <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-YY2SRNP58L`}
           ></script>
