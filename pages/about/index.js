@@ -1,15 +1,21 @@
-function Donate() {
+function Donate({ lang }) {
   return (
     <div className="container donate-container">
       <div className="donate-main-title">
-        <h1>Kripto para ile çorba parası bırakabilirsiniz :)</h1>
+        <h1>
+          {lang === "TR"
+            ? "Kripto para ile çorba parası bırakabilirsiniz :)"
+            : "You can donate with cryptocurrencies :)"}
+        </h1>
         <img
           src="https://img.icons8.com/dusk/32/000000/like.png"
           alt="heart-icon"
         />
       </div>
       <p className="donate-secondary-title">
-        Bağışların yarısı sokak hayvanlarına gidecektir.
+        {lang === "TR"
+          ? "Bağışların yarısı sokak hayvanlarına gidecektir."
+          : "Half of the donations will go to stray animals."}
       </p>
       <div className="donate-accounts">
         <p>
@@ -41,14 +47,18 @@ function Donate() {
         </p>
       </div>
       <div className="site-info">
-        <h2 className="site-info-title">Site Hakkında</h2>
+        <h2 className="site-info-title">
+          {lang === "TR" ? "Site Hakkında" : "About the website"}
+        </h2>
         <p className="site-info-content">
-          Herkese merhaba TürkTorrentOyun(TTO) gelişim sürecindedir. Lütfen ona
-          iyi davranın :)
+          {lang === "TR"
+            ? "Herkese merhaba TurkTorrentOyun(TTO) gelişim sürecindedir. Lütfen ona iyi davranın :)"
+            : "Hello everyone, TurkTorrentOyun(TTO) is under development. Please be nice to him :)"}
         </p>
         <p className="site-info-content">
-          Torrentler reklamsızdır. Deneme amaçlı sunulmuştur, oyunun aslını
-          almanız tavsiye edilir.
+          {lang === "TR"
+            ? " Torrentler reklamsızdır. Deneme amaçlı sunulmuştur, oyunun aslını almanız tavsiye edilir."
+            : "Torrents are ad-free. It is offered for trial purposes, it is recommended to take the original game."}
         </p>
       </div>
     </div>

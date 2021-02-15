@@ -1,8 +1,9 @@
 import Head from "next/head";
+
 import Navbar from "../Navbar/Navbar";
 import Warning from "../Warning/Warning";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, lang, setLang }) => {
   return (
     <div className="App">
       <Head>
@@ -24,7 +25,7 @@ const Layout = ({ children }) => {
         />
         <title>Turk Torrent Oyun</title>
       </Head>
-      <Navbar />
+      <Navbar lang={lang} setLang={setLang} />
       <main className="container main">{children}</main>
       <footer className="container d-flex footer mt-5">
         <Warning content='Sitemiz, hukuka, yasalara, telif haklarına ve kişilik haklarına saygılı olmayı amaç edinmiştir. Sitemiz, 5651 sayılı yasada tanımlanan "yer sağlayıcı" olarak hizmet vermektedir. İlgili yasaya göre, site yönetiminin hukuka aykırı içerikleri kontrol etme yükümlülüğü yoktur. Bu sebeple, sitemiz "uyar ve kaldır" prensibini benimsemiştir.' />

@@ -2,14 +2,14 @@ import Head from "next/head";
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 
-export default function Home({ randomGames, gamesData }) {
+export default function Home({ randomGames, gamesData, lang }) {
   return (
     <div>
       <Head>
         <title>Turk Torrent Oyun, Full oyun, Tek Link Oyun Yükle Demo</title>
       </Head>
-      <RandomGames randomGames={randomGames} />
-      <GamesContainer gamesData={gamesData} />
+      <RandomGames lang={lang} randomGames={randomGames} />
+      <GamesContainer lang={lang} gamesData={gamesData} />
     </div>
   );
 }

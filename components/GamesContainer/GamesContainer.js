@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./GamesContainer.module.css";
 import Loader from "../Loader/Loader";
-const GamesContainer = ({ gamesData }) => {
+const GamesContainer = ({ gamesData, lang }) => {
   const [gamesDataState, setGamesDataState] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -45,7 +45,7 @@ const GamesContainer = ({ gamesData }) => {
               : "gamesContainerTagLast"
           }
         >
-          Çok indirilenler
+          {lang === "TR" ? "Çok indirilenler" : "Most populer..."}
         </span>
         <span
           onClick={() => {
@@ -62,7 +62,7 @@ const GamesContainer = ({ gamesData }) => {
               : "gamesContainerTagMost"
           }
         >
-          Son eklenen
+          {lang === "TR" ? "Son eklenen" : "Last added...   "}
         </span>
         {gamesDataState.map((item) => {
           return (
@@ -96,7 +96,7 @@ const GamesContainer = ({ gamesData }) => {
           }}
           className={styles.paginationButton + " mx-1"}
         >
-          {"<< "}Geri
+          {lang === "TR" ? "<< Geri" : "<< Prev"}
         </button>
         <button
           disabled={
@@ -108,7 +108,7 @@ const GamesContainer = ({ gamesData }) => {
           }}
           className={styles.paginationButton + " mx-1"}
         >
-          İleri{" >>"}
+          {lang === "TR" ? "İleri >>" : "Next >>"}
         </button>
       </div>
     </>

@@ -1,34 +1,63 @@
 import styles from "./SingleGame.module.css";
 import Link from "next/link";
 
-const SingleGame = ({ data }) => {
+const SingleGame = ({ data, lang }) => {
   if (data) {
     return (
       <div className={styles.singleGame + " container"}>
-        <h1 className={styles.title}>{data.title + " torrent oyun indir"}</h1>
+        <h1 className={styles.title}>
+          {lang === "TR"
+            ? data.title + " torrent oyun indir"
+            : data.title + " torrent download"}
+        </h1>
         <img className={styles.mainImage} src={data.image} alt={data.title} />
         <h2 className={styles.title}>
-          {data.title + " torrent oyun açıklaması "}
+          {lang === "TR"
+            ? data.title + " torrent oyun açıklaması "
+            : data.title + " torrent game description"}
         </h2>
         <p className={styles.description + " w-75"}>
           {data.content
             ? data.content
-            : data.title + " torrent oyunu açıklaması henüz eklenmedi."}
+            : lang === "TR"
+            ? data.title + " torrent oyunu açıklaması henüz eklenmedi."
+            : data.title + " torrent game currently has no description"}
         </p>
-        <h3 className={styles.title}>Oyun Yapımcısına Destek Olun</h3>
-        <p className="w-75">
-          {data.title} Oyunu beğendiyseniz{" "}
-          <a
-            className={styles.creatorUrl}
-            target="_blank"
-            href={data.creatorUrl ? data.creatorUrl : "/"}
-          >
-            BURADAN
-          </a>{" "}
-          oyunu satın alabilir, oyun yapımcısına destek olabilir ve yeni
-          oyunların çıkmasının önünü açabilirsiniz.
-        </p>
-        <h3 className={styles.title}>Oyun İçi Görseller</h3>
+        <h3 className={styles.title}>
+          {lang === "TR"
+            ? "Oyunun yapımcısına destek olun"
+            : "Support the producer of the game"}
+        </h3>
+        {lang === "TR" ? (
+          <p className="w-75">
+            {data.title} Oyunu beğendiyseniz{" "}
+            <a
+              className={styles.creatorUrl}
+              target="_blank"
+              href={data.creatorUrl ? data.creatorUrl : "/"}
+            >
+              BURADAN
+            </a>{" "}
+            oyunu satın alabilir, oyun yapımcısına destek olabilir ve yeni
+            oyunların çıkmasının önünü açabilirsiniz.
+          </p>
+        ) : (
+          <p className="w-75">
+            {data.title} If you like the game you can purchase from{" "}
+            <a
+              className={styles.creatorUrl}
+              target="_blank"
+              href={data.creatorUrl ? data.creatorUrl : "/"}
+            >
+              HERE
+            </a>{" "}
+            and support the game maker so you can pave the way for more games to
+            come out.
+          </p>
+        )}
+        <h3 className={styles.title}>
+          {lang === "TR" ? "Oyun İçi Görseller" : "In-game images"}
+        </h3>
         {Array.from(data.inGameImages).map((item, index) => {
           return (
             <img
@@ -39,33 +68,75 @@ const SingleGame = ({ data }) => {
             />
           );
         })}
-        <h4 className={styles.title}>Minimum Sistem Gereksinimleri</h4>
+        <h4 className={styles.title}>
+          {lang === "TR"
+            ? "Minimum Sistem Gereksinimleri"
+            : "Minimum system requirements"}
+        </h4>
         <div className={styles.systemReq + " text-left w-75"}>
           <p>
-            İşletim sistemi:{" "}
-            <span>{data.req ? data.req.system : "Bilinmiyor"}</span>
+            {lang === "TR" ? "İşletim sistemi:" : "OS:"}{" "}
+            <span>
+              {data.req
+                ? data.req.system
+                : lang === "TR"
+                ? "Bilinmiyor"
+                : "Unknown"}
+            </span>
           </p>
           <p>
-            İşlemci: <span>{data.req ? data.req.cpu : "Bilinmiyor"}</span>
+            {lang === "TR" ? "İşlemci:" : "CPU:"}{" "}
+            <span>
+              {data.req
+                ? data.req.cpu
+                : lang === "TR"
+                ? "Bilinmiyor"
+                : "Unknown"}
+            </span>
           </p>
           <p>
-            Ekran Kartı: <span>{data.req ? data.req.gpu : "Bilinmiyor"}</span>
+            {lang === "TR" ? "Ekran Kartı:" : "GPU:"}{" "}
+            <span>
+              {data.req
+                ? data.req.gpu
+                : lang === "TR"
+                ? "Bilinmiyor"
+                : "Unknown"}
+            </span>
           </p>
           <p>
-            Bellek: <span>{data.req ? data.req.ram : "Bilinmiyor"}</span>
+            {lang === "TR" ? "Bellek:" : "RAM:"}{" "}
+            <span>
+              {data.req
+                ? data.req.ram
+                : lang === "TR"
+                ? "Bilinmiyor"
+                : "Unknown"}
+            </span>
           </p>
           <p>
-            Boyut: <span>{data.siz ? data.size : "Bilinmiyor"}</span>
+            {lang === "TR" ? "Boyut:" : "SIZE:"}{" "}
+            <span>
+              {data.siz ? data.size : lang === "TR" ? "Bilinmiyor" : "Unknown"}
+            </span>
           </p>
         </div>
-        <p>İndirime Linki</p>
+        <p>{lang === "TR" ? "İndirime Linki" : "Download link"}</p>
         <Link href={data.downloadLink}>
-          <a className={styles.downloadLink}>{data.title + " indir"}</a>
+          <a className={styles.downloadLink}>
+            {lang === "TR" ? data.title + " indir" : data.title + " download"}
+          </a>
         </Link>
       </div>
     );
   } else {
-    return <h1>Aradınığınız oyun bulunamadı.</h1>;
+    return (
+      <h1>
+        {lang === "TR"
+          ? "Aradınığınız oyun bulunamadı."
+          : "Couldnt find any result."}
+      </h1>
+    );
   }
 };
 export default SingleGame;

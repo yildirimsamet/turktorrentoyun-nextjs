@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import SingleGame from "../components/SingleGame/SingleGame";
-const spesificGame = ({ data }) => {
+const spesificGame = ({ data, lang }) => {
   const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
     if (data.title) {
@@ -24,7 +24,7 @@ const spesificGame = ({ data }) => {
         />
         <title>{metaTitle} - Turk Torrent Oyun</title>
       </Head>
-      <SingleGame data={data} />
+      <SingleGame lang={lang} data={data} />
     </>
   );
 };

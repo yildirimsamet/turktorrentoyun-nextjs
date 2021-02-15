@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Loader from "../Loader/Loader";
 
-function Navbar() {
+function Navbar({ lang, setLang }) {
   const [navOpen, setNavOpen] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
+
   const router = useRouter();
   const translateWord = (text) => {
     var trMap = {
@@ -27,7 +28,10 @@ function Navbar() {
   };
   useEffect(() => {
     setLoading(false);
-  }, [router]);
+    if (localStorage.getItem("lang")) {
+      setLang(localStorage.getItem("lang"));
+    }
+  }, [router, lang]);
   return (
     <div id="nav">
       <nav className="navbar navbar-expand-lg container">
@@ -35,6 +39,7 @@ function Navbar() {
           <Link href="/">
             <a className="navbar-brand"> TURKTORRENTOYUN</a>
           </Link>
+
           <button
             className="navbar-toggler nav-hamburger"
             type="button"
@@ -69,7 +74,7 @@ function Navbar() {
                       src="https://img.icons8.com/cute-clipart/34/000000/controller.png"
                       alt="computer-icon"
                     />
-                    <span>Anasayfa</span>
+                    <span>{lang === "TR" ? "Anasayfa" : "Home"}</span>
                   </a>
                 </Link>
               </li>
@@ -81,9 +86,29 @@ function Navbar() {
                       src="https://img.icons8.com/plasticine/38/000000/about.png"
                       alt="hakkinda"
                     />
-                    <span>Hakkında</span>
+                    <span>{lang === "TR" ? "Hakkında" : "About"}</span>
                   </a>
                 </Link>
+              </li>
+              <li className="nav-item switch-li">
+                <span>TR</span>
+                <label className="switch">
+                  <input
+                    checked={lang === "ENG" ? true : false}
+                    onChange={() => {
+                      if (lang === "TR") {
+                        setLang("ENG");
+                        localStorage.setItem("lang", "ENG");
+                      } else {
+                        setLang("TR");
+                        localStorage.setItem("lang", "TR");
+                      }
+                    }}
+                    type="checkbox"
+                  />
+                  <span className="slider round"></span>
+                </label>
+                <span>ENG</span>
               </li>
             </ul>
 
@@ -102,7 +127,7 @@ function Navbar() {
               <input
                 className="form-control"
                 type="search"
-                placeholder="Ara"
+                placeholder={lang === "TR" ? "Ara" : "Search"}
                 aria-label="Search"
                 value={searchInput}
                 onChange={(e) => {
@@ -117,7 +142,7 @@ function Navbar() {
                   }}
                   className="btn btn-dark"
                 >
-                  Ara
+                  {lang === "TR" ? "Ara" : "Search"}
                 </a>
               </Link>
             </form>

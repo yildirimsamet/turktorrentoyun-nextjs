@@ -3,7 +3,7 @@ import { IoMdRefresh } from "react-icons/io";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
-const RandomGames = ({ randomGames }) => {
+const RandomGames = ({ randomGames, lang }) => {
   const [randomGamesState, setRandomGamesState] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -13,7 +13,9 @@ const RandomGames = ({ randomGames }) => {
   return (
     <div className={styles.randomGames}>
       {loading && <Loader />}
-      <span className={styles.randomGamesTag}>Rastgele oyunlar</span>
+      <span className={styles.randomGamesTag}>
+        {lang === "TR" ? "Rastgele oyunlar" : "Random games"}
+      </span>
       <span className={styles.randomGamesRefreshTag}>
         <IoMdRefresh
           size="22px"

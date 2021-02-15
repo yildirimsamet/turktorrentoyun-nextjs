@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import SearchContainer from "../../components/SearchContainer/SearchContainer";
-const searchPage = ({ searchGames }) => {
+const searchPage = ({ searchGames, lang }) => {
   const router = useRouter();
   const [searchResult, setSearchResult] = useState("");
   const [searchGamesCount, setSearchGamesCount] = useState(0);
@@ -13,8 +13,16 @@ const searchPage = ({ searchGames }) => {
     return (
       <div>
         <div className="container mt-5 text-center">
-          <h1>{"'" + searchResult + "'" + " arama sonuçları"}</h1>
-          <p className="text-muted">{searchGamesCount + " sonuç bulundu"}</p>
+          <h1>
+            {lang === "TR"
+              ? "'" + searchResult + "'" + " arama sonuçları"
+              : "'" + searchResult + "'" + " search results"}
+          </h1>
+          <p className="text-muted">
+            {lang === "TR"
+              ? searchGamesCount + " sonuç bulundu"
+              : searchGamesCount + " results found"}
+          </p>
         </div>
 
         <SearchContainer gamesData={searchGames} />
