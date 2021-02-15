@@ -21,6 +21,7 @@ const GamesContainer = ({ gamesData }) => {
                   <img
                     className="mx-1"
                     src="https://img.icons8.com/android/18/ffffff/visible.png"
+                    alt="eye"
                   />
                   <span>{item.viewCount + " görüntülenme"}</span>
                 </div>

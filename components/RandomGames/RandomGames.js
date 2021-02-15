@@ -3,12 +3,25 @@ import { IoMdRefresh } from "react-icons/io";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Loader from "../Loader/Loader";
-const RandomGames = ({ randomGames, lang }) => {
+const RandomGames = ({ lang }) => {
   const [randomGamesState, setRandomGamesState] = useState([]);
   const [loading, setLoading] = useState(false);
+  const getData = async () => {
+    fetch("https://turktorrentoyunapi.herokuapp.com/randomsix")
+      .then((res) => res.json())
+      .then((res) => {
+        setLoading(false);
+        setRandomGamesState(res);
+      });
+  };
   useEffect(() => {
-    setRandomGamesState(randomGames);
-  }, [randomGames]);
+    fetch("https://turktorrentoyunapi.herokuapp.com/randomsix")
+      .then((res) => res.json())
+      .then((res) => {
+        setLoading(false);
+        setRandomGamesState(res);
+      });
+  }, []);
 
   return (
     <div className={styles.randomGames}>
@@ -21,12 +34,7 @@ const RandomGames = ({ randomGames, lang }) => {
           size="22px"
           onClick={() => {
             setLoading(true);
-            fetch("https://turktorrentoyunapi.herokuapp.com/randomsix")
-              .then((res) => res.json())
-              .then((res) => {
-                setLoading(false);
-                setRandomGamesState(res);
-              });
+            getData();
           }}
         />
       </span>
