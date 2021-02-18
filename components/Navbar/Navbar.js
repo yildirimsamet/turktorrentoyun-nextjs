@@ -58,10 +58,7 @@ function Navbar({ lang, setLang }) {
                 alt="close-icon"
               />
             ) : (
-              <img
-                src="https://img.icons8.com/doodle/30/000000/menu.png"
-                alt="bars-icon"
-              />
+              <img src="/icons/menu.png" alt="bars-icon" />
             )}
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -71,7 +68,7 @@ function Navbar({ lang, setLang }) {
                   <a aria-current="page" className="nav-link active">
                     <img
                       className="mx-1"
-                      src="https://img.icons8.com/cute-clipart/34/000000/controller.png"
+                      src="/icons/controller.png"
                       alt="computer-icon"
                     />
                     <span>{lang === "TR" ? "Anasayfa" : "Home"}</span>
@@ -84,7 +81,7 @@ function Navbar({ lang, setLang }) {
                     <img
                       className="mx-1"
                       alt="torrent oyun nasil kurulur"
-                      src="https://img.icons8.com/dusk/32/000000/gear.png"
+                      src="/icons/gear.png"
                     />
 
                     <span>
@@ -98,7 +95,7 @@ function Navbar({ lang, setLang }) {
                   <a aria-current="page" className="nav-link active">
                     <img
                       className="mx-1"
-                      src="https://img.icons8.com/plasticine/38/000000/about.png"
+                      src="/icons/about.png"
                       alt="hakkinda"
                     />
                     <span>{lang === "TR" ? "Hakkında" : "About"}</span>
