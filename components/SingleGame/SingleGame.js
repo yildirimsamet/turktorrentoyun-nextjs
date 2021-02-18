@@ -117,7 +117,7 @@ const SingleGame = ({ data, lang }) => {
           <p>
             {lang === "TR" ? "Boyut:" : "SIZE:"}{" "}
             <span>
-              {data.siz ? data.size : lang === "TR" ? "Bilinmiyor" : "Unknown"}
+              {data.size ? data.size : lang === "TR" ? "Bilinmiyor" : "Unknown"}
             </span>
           </p>
         </div>
