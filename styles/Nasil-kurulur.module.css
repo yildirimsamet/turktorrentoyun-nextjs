@@ -1,0 +1,21 @@
+.image {
+  max-width: 100%;
+}
+.title {
+  color: rgb(160, 38, 38);
+}
+.list {
+  padding: 0;
+}
+.list > li {
+  list-style-type: none;
+}
+.list > li > p {
+  color: orange;
+  margin: 15px 0;
+  font-weight: bold;
+}
+.howto {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 25px 15px;
+}

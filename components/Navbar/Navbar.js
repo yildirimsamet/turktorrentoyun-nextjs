@@ -79,7 +79,22 @@ function Navbar({ lang, setLang }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/about">
+                <Link href="/nasil-kurulur">
+                  <a aria-current="page" className="nav-link active">
+                    <img
+                      className="mx-1"
+                      alt="torrent oyun nasil kurulur"
+                      src="https://img.icons8.com/dusk/32/000000/gear.png"
+                    />
+
+                    <span>
+                      {lang === "TR" ? "Nasıl kurulur" : "How to setup"}
+                    </span>
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link href="/hakkinda">
                   <a aria-current="page" className="nav-link active">
                     <img
                       className="mx-1"
@@ -90,6 +105,7 @@ function Navbar({ lang, setLang }) {
                   </a>
                 </Link>
               </li>
+
               <li className="nav-item switch-li">
                 <span>TR</span>
                 <label className="switch">

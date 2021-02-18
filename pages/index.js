@@ -2,7 +2,7 @@ import Head from "next/head";
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 
-export default function Home({ randomGames, gamesData, lang }) {
+export default function Home({ gamesData, lang }) {
   return (
     <div>
       <Head>
