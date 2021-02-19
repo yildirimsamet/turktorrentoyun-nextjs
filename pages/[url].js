@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import SingleGame from "../components/SingleGame/SingleGame";
-import AdBanner from "../components/AdBanner/AdBanner";
 const spesificGame = ({ data, lang }) => {
   const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {
+      console.log(err);
+    }
+
     if (data.title) {
       setMetaTitle(data.title);
     }
     fetch(
       `https://turktorrentoyunapi.herokuapp.com/updateviewcount/${data.url}`
     );
-  }, [data]);
+  }, [data, typeof window]);
   return (
     <>
       <Head>

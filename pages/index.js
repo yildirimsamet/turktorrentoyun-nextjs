@@ -1,9 +1,17 @@
 import Head from "next/head";
-import AdBanner from "../components/AdBanner/AdBanner";
+import { useEffect } from "react";
+
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 
 export default function Home({ gamesData, lang }) {
+  useEffect(() => {
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (error) {
+      console.log(err);
+    }
+  }, [typeof window]);
   return (
     <div>
       <Head>
