@@ -1,4 +1,5 @@
 import Head from "next/head";
+import AdBanner from "../components/AdBanner/AdBanner";
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 
@@ -8,6 +9,9 @@ export default function Home({ gamesData, lang }) {
       <Head>
         <title>Turk Torrent Oyun, Full oyun, Tek Link Oyun Yükle Demo</title>
       </Head>
+      <div className="container d-flex justify-content-center my-2">
+        <AdBanner />
+      </div>
       <RandomGames lang={lang} />
       <GamesContainer lang={lang} gamesData={gamesData} />
     </div>

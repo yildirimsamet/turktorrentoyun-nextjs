@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import SingleGame from "../components/SingleGame/SingleGame";
+import AdBanner from "../components/AdBanner/AdBanner";
 const spesificGame = ({ data, lang }) => {
   const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
@@ -24,6 +25,9 @@ const spesificGame = ({ data, lang }) => {
         />
         <title>{metaTitle} - Turk Torrent Oyun</title>
       </Head>
+      <div className="container justify-content-center my-2">
+        <AdBanner />
+      </div>
       <SingleGame lang={lang} data={data} />
     </>
   );

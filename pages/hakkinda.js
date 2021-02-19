@@ -1,6 +1,14 @@
+import Head from "next/head";
 function Donate({ lang }) {
   return (
     <div className="container donate-container">
+      <Head>
+        <title>Hakkında</title>
+        <meta
+          name="description"
+          content="Turk torrent oyun hakkında sayfası."
+        />
+      </Head>
       <div className="donate-main-title">
         <h1>
           {lang === "TR"

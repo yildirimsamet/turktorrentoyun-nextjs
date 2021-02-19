@@ -1,7 +1,15 @@
 import styles from "../styles/Nasil-kurulur.module.css";
+import Head from "next/head";
 const howToSetup = ({ lang }) => {
   return (
     <div className={styles.howto + " container mt-5 text-center"}>
+      <Head>
+        <title>Utorrent oyun indirip kurma</title>
+        <meta
+          name="description"
+          content="Torrent ile indirilen oyun deamontools aracılığıyla nasıl kurulur. Altı aşamada torrent oyununuzu yükleyin."
+        />
+      </Head>
       <h1 className={styles.title + " mb-5"}>
         {lang === "TR"
           ? "Utorrent oyun indirip kurma"
