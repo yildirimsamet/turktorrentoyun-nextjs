@@ -1,8 +1,6 @@
 import Head from "next/head";
-
 import Navbar from "../Navbar/Navbar";
 import Warning from "../Warning/Warning";
-
 const Layout = ({ children, lang, setLang }) => {
   return (
     <div className="App">

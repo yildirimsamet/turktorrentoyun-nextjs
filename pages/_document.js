@@ -33,7 +33,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
+          {/* <script
             dangerouslySetInnerHTML={{
               __html: `
              
@@ -41,7 +41,7 @@ class MyDocument extends Document {
          
           `,
             }}
-          ></script>
+          ></script> */}
         </body>
       </Html>
     );

@@ -1,24 +1,17 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import SingleGame from "../components/SingleGame/SingleGame";
+import AdBanner from "../components/AdBanner/AdBanner";
 const spesificGame = ({ data, lang }) => {
   const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
-    if (typeof window !== undefined) {
-      try {
-        (adsbygoogle = []).push({});
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
     if (data.title) {
       setMetaTitle(data.title);
     }
     fetch(
       `https://turktorrentoyunapi.herokuapp.com/updateviewcount/${data.url}`
     );
-  }, [data, typeof window]);
+  }, [data]);
   return (
     <>
       <Head>
@@ -30,14 +23,7 @@ const spesificGame = ({ data, lang }) => {
         <title>{metaTitle} torrentle indir - Turk Torrent Oyun</title>
       </Head>
       <div className="container text-center mt-5">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-2743431608715099"
-          data-ad-slot="8093814491"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+        <AdBanner />
       </div>
       <SingleGame lang={lang} data={data} />
     </>
