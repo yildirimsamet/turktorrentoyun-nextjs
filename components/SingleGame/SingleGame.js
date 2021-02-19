@@ -7,14 +7,12 @@ const SingleGame = ({ data, lang }) => {
       <div className={styles.singleGame + " container"}>
         <h1 className={styles.title}>
           {lang === "TR"
-            ? data.title + " torrent oyun indir"
+            ? data.title + " torrentle indir"
             : data.title + " torrent download"}
         </h1>
         <img className={styles.mainImage} src={data.image} alt={data.title} />
         <h2 className={styles.title}>
-          {lang === "TR"
-            ? data.title + " torrent oyun açıklaması "
-            : data.title + " torrent game description"}
+          {lang === "TR" ? "Oyunun açıklaması" : "Game description"}
         </h2>
         <p className={styles.description + " w-75"}>
           {data.content
@@ -64,7 +62,7 @@ const SingleGame = ({ data, lang }) => {
               key={index}
               className={styles.inGameImages}
               src={item}
-              alt={data.title}
+              alt={data.title + " torrentle indir " + index}
             />
           );
         })}
@@ -123,8 +121,10 @@ const SingleGame = ({ data, lang }) => {
         </div>
         <p>{lang === "TR" ? "İndirime Linki" : "Download link"}</p>
         <Link href={data.downloadLink}>
-          <a className={styles.downloadLink}>
-            {lang === "TR" ? data.title + " indir" : data.title + " download"}
+          <a rel="nofollow" className={styles.downloadLink}>
+            {lang === "TR"
+              ? data.title + " torrentle indir"
+              : data.title + " download"}
           </a>
         </Link>
       </div>

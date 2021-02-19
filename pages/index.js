@@ -1,15 +1,16 @@
 import Head from "next/head";
 import { useEffect } from "react";
-
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 
 export default function Home({ gamesData, lang }) {
   useEffect(() => {
-    try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (error) {
-      console.log(err);
+    if (typeof window !== undefined) {
+      try {
+        (adsbygoogle = []).push({});
+      } catch (err) {
+        console.log(err);
+      }
     }
   }, [typeof window]);
   return (

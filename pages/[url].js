@@ -4,10 +4,12 @@ import SingleGame from "../components/SingleGame/SingleGame";
 const spesificGame = ({ data, lang }) => {
   const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
-    try {
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (error) {
-      console.log(err);
+    if (typeof window !== undefined) {
+      try {
+        (adsbygoogle = []).push({});
+      } catch (err) {
+        console.log(err);
+      }
     }
 
     if (data.title) {
@@ -22,13 +24,10 @@ const spesificGame = ({ data, lang }) => {
       <Head>
         <meta
           name="description"
-          content={`${metaTitle} turk torrent oyun indir. Tamamen ücretsiz ve reklamsız torrent oyun indir.`}
+          content={`${metaTitle} torrentle indir. Tamamen ücretsiz ve reklamsız torrent oyun indir.`}
         />
-        <meta
-          name="keywords"
-          content={`${metaTitle} torrent indir, ${metaTitle} indir, tto torrent, torrent oyun indir, turk torrent, torrentten oyun indir, u torrentten oyun, u torrent oyun indir, oyun torrent`}
-        />
-        <title>{metaTitle} - Turk Torrent Oyun</title>
+
+        <title>{metaTitle} torrentle indir - Turk Torrent Oyun</title>
       </Head>
       <div className="container text-center mt-5">
         <ins

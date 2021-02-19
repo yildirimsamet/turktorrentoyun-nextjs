@@ -25,6 +25,7 @@ class MyDocument extends Document {
             gtag('config', 'G-YY2SRNP58L', {
               page_path: window.location.pathname,
             });
+            
           `,
             }}
           ></script>
@@ -35,7 +36,10 @@ class MyDocument extends Document {
           <script
             dangerouslySetInnerHTML={{
               __html: `
-          (adsbygoogle = window.adsbygoogle || []).push({});`,
+             
+          (adsbygoogle = window.adsbygoogle || []).push({});
+         
+          `,
             }}
           ></script>
         </body>
