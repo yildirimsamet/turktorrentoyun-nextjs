@@ -9,8 +9,15 @@ export default function Home({ gamesData, lang }) {
       <Head>
         <title>Turk Torrent Oyun, Full oyun, Tek Link Oyun Yükle Demo</title>
       </Head>
-      <div className="container d-flex justify-content-center my-2">
-        <AdBanner />
+      <div className="container text-center mt-5">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-2743431608715099"
+          data-ad-slot="8093814491"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
       </div>
       <RandomGames lang={lang} />
       <GamesContainer lang={lang} gamesData={gamesData} />

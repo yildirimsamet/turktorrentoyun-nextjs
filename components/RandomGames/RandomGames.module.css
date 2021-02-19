@@ -6,6 +6,7 @@
   border-width: 3px;
   border-image-source: linear-gradient(to left, #1f1c18, #8e0e00);
   position: relative;
+  height: 261px;
 }
 .randomGames:hover .randomGamesTag {
   opacity: 1;

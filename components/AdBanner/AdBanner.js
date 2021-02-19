@@ -3,7 +3,9 @@ import React, { useEffect } from "react";
 const AdBanner = () => {
   useEffect(() => {
     try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
+      window.onload = function () {
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      };
     } catch (err) {
       console.log(err);
     }
