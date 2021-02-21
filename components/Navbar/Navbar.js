@@ -76,7 +76,7 @@ function Navbar({ lang, setLang }) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link href="/nasil-kurulur">
+                <Link href="/utorrent-oyun-indirip-kurma">
                   <a aria-current="page" className="nav-link active">
                     <img
                       className="mx-1"
@@ -104,7 +104,9 @@ function Navbar({ lang, setLang }) {
               </li>
 
               <li className="nav-item switch-li">
-                <span>TR</span>
+                <span>
+                  <strong>TR</strong>
+                </span>
                 <label className="switch">
                   <input
                     checked={lang === "ENG" ? true : false}
@@ -121,7 +123,9 @@ function Navbar({ lang, setLang }) {
                   />
                   <span className="slider round"></span>
                 </label>
-                <span>ENG</span>
+                <span>
+                  <strong>ENG</strong>
+                </span>
               </li>
             </ul>
 

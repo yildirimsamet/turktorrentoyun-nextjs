@@ -1,8 +1,24 @@
 import Head from "next/head";
+import { useEffect } from "react";
 import AdBanner from "../components/AdBanner/AdBanner";
 import GamesContainer from "../components/GamesContainer/GamesContainer";
 import RandomGames from "../components/RandomGames/RandomGames";
 export default function Home({ gamesData, lang }) {
+  useEffect(() => {
+    (async () => {
+      const res = await fetch(
+        "http://turktorrentoyunapi.herokuapp.com/api/links"
+      );
+      const links = await res.json();
+      links.map((item, index) => {
+        if (index > 1500 && index < 3500) {
+          console.log(
+            `<url><loc>https://turktorrentoyun.com/${item.url}/</loc></url>`
+          );
+        }
+      });
+    })();
+  }, []);
   return (
     <div>
       <Head>

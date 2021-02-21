@@ -4,13 +4,22 @@ import Link from "next/link";
 const SingleGame = ({ data, lang }) => {
   if (data) {
     return (
-      <div className={styles.singleGame + " container"}>
+      <div className={styles.singleGame + " container mt-3"}>
         <h1 className={styles.title}>
           {lang === "TR"
             ? data.title + " torrentle indir"
             : data.title + " torrent download"}
         </h1>
         <img className={styles.mainImage} src={data.image} alt={data.title} />
+        <p className="w-75">
+          Oyun sorunsuz çalışmakta. Alttaki linkten {data.title} torrentle
+          indirip kurduktan sonra crack atıp oynayabilirsiniz. Kurulumu
+          bilmiyorsanız{" "}
+          <Link href="/utorrent-oyun-indirip-kurma">
+            <a>utorrent oyun indirip kurma</a>
+          </Link>{" "}
+          kısmından öğrenebilirsiniz.
+        </p>
         <h2 className={styles.title}>
           {lang === "TR" ? "Oyunun açıklaması" : "Game description"}
         </h2>
@@ -18,9 +27,11 @@ const SingleGame = ({ data, lang }) => {
           {data.content
             ? data.content
             : lang === "TR"
-            ? data.title + " torrent oyunu açıklaması henüz eklenmedi."
-            : data.title + " torrent game currently has no description"}
+            ? data.title +
+              " torrentle indir açıklaması en kısa sürede eklenecektir."
+            : data.title + "'s description will be added as soon as possible"}
         </p>
+
         <h3 className={styles.title}>
           {lang === "TR"
             ? "Oyunun yapımcısına destek olun"

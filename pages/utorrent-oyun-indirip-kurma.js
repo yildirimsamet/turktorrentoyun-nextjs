@@ -1,4 +1,5 @@
 import styles from "../styles/Nasil-kurulur.module.css";
+import Link from "next/link";
 import Head from "next/head";
 const howToSetup = ({ lang }) => {
   return (
@@ -7,7 +8,7 @@ const howToSetup = ({ lang }) => {
         <title>Utorrent oyun indirip kurma</title>
         <meta
           name="description"
-          content="Torrent ile indirilen oyun deamontools aracılığıyla nasıl kurulur. Altı aşamada torrent oyununuzu yükleyin."
+          content="Utorrent ile oyun indirip kurma. Torrent ile indirilen oyun deamontools aracılığıyla nasıl kurulur. Altı aşamada torrent oyununuzu yükleyin."
         />
       </Head>
       <h1 className={styles.title + " mb-5"}>
@@ -15,6 +16,10 @@ const howToSetup = ({ lang }) => {
           ? "Utorrent oyun indirip kurma"
           : "How to download and setup torrent game"}
       </h1>
+      <p>
+        Utorrent ile oyun indirip kurma. Torrent ile indirilen oyun deamontools
+        aracılığıyla nasıl kurulur. Altı aşamada torrent oyununuzu yükleyin.
+      </p>
       <ul className={styles.list}>
         <li>
           <p>
@@ -89,7 +94,17 @@ const howToSetup = ({ lang }) => {
           />
         </li>
         <li>
-          <p>{lang === "TR" ? "İyi eğlenceler :)" : "Have fun :)"}</p>
+          <p>
+            {lang === "TR" ? (
+              <Link href="/">
+                <a>İyi eğlenceler :)</a>
+              </Link>
+            ) : (
+              <Link href="/">
+                <a>Have fun :)</a>
+              </Link>
+            )}
+          </p>
         </li>
       </ul>
     </div>

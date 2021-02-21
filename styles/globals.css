@@ -87,6 +87,9 @@
 .main {
   min-height: 54vh;
 }
+a {
+  text-decoration: none;
+}
 @media only screen and (max-width: 540px) {
   html::-webkit-scrollbar {
     display: none;

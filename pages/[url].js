@@ -17,7 +17,7 @@ const spesificGame = ({ data, lang }) => {
       <Head>
         <meta
           name="description"
-          content={`${metaTitle} torrentle indir. Tamamen ücretsiz ve reklamsız torrent oyun indir.`}
+          content={`${metaTitle} torrentle indir. Tamamen ücretsiz ve reklamsız torrentle oyun indir.`}
         />
 
         <title>{metaTitle} torrentle indir - Turk Torrent Oyun</title>
@@ -49,6 +49,7 @@ export const getStaticProps = async (ctx) => {
     `https://turktorrentoyunapi.herokuapp.com/api/singlegamebyurl/${ctx.params.url}`
   );
   const data = await res.json();
+
   return {
     props: { data: data[0] },
   };

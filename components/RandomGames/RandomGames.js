@@ -24,7 +24,7 @@ const RandomGames = ({ lang }) => {
   }, []);
 
   return (
-    <div className={styles.randomGames}>
+    <div className={styles.randomGames + " mt-5"}>
       {loading && <Loader />}
       <span className={styles.randomGamesTag}>
         {lang === "TR" ? "Rastgele oyunlar" : "Random games"}
