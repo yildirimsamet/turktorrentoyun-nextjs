@@ -1,10 +1,19 @@
 import styles from "./SingleGame.module.css";
 import Link from "next/link";
+import Head from "next/head";
 
 const SingleGame = ({ data, lang }) => {
   if (data) {
     return (
       <div className={styles.singleGame + " container mt-3"}>
+        <Head>
+          <meta
+            name="description"
+            content={`⭐⭐⭐⭐ ${data.title} torrentle indir. Reklamsız full torrent oyun torrentle oyun indir...`}
+          />
+
+          <title>{data.title} torrentle indir - Turk Torrent Oyun %100 ✔</title>
+        </Head>
         <h1 className={styles.title}>
           {lang === "TR"
             ? data.title + " torrentle indir"
