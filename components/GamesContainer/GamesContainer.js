@@ -7,7 +7,7 @@ const GamesContainer = ({ gamesData, lang }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
   const [currentApi, setCurrentApi] = useState(
-    "https://turktorrentoyunapi.herokuapp.com/pagination/lastadded"
+    "https://turktorrentoyun.herokuapp.com/pagination/lastadded"
   );
   const [currentTag, setCurrentTag] = useState("Most");
 
@@ -36,7 +36,7 @@ const GamesContainer = ({ gamesData, lang }) => {
             setCurrentTag("Last");
             setCurrentPage(0);
             setCurrentApi(
-              "https://turktorrentoyunapi.herokuapp.com/pagination/mostviewed"
+              "https://turktorrentoyun.herokuapp.com/pagination/mostviewed"
             );
           }}
           className={
@@ -53,7 +53,7 @@ const GamesContainer = ({ gamesData, lang }) => {
             setCurrentTag("Most");
             setCurrentPage(0);
             setCurrentApi(
-              "https://turktorrentoyunapi.herokuapp.com/pagination/lastadded"
+              "https://turktorrentoyun.herokuapp.com/pagination/lastadded"
             );
           }}
           className={

@@ -19,7 +19,7 @@ export default function Home({ gamesData, lang }) {
 }
 export const getStaticProps = async () => {
   const res2 = await fetch(
-    "https://turktorrentoyunapi.herokuapp.com/pagination/lastadded/0"
+    "https://turktorrentoyun.herokuapp.com/pagination/lastadded/0"
   );
   const gamesData = await res2.json();
 

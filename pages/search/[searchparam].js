@@ -39,16 +39,13 @@ const searchPage = ({ searchGames, lang }) => {
 export default searchPage;
 
 export const getServerSideProps = async (ctx) => {
-  const res = await fetch(
-    `https://turktorrentoyunapi.herokuapp.com/api/search`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ searchItem: ctx.params.searchparam }),
-    }
-  );
+  const res = await fetch(`https://turktorrentoyun.herokuapp.com/api/search`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ searchItem: ctx.params.searchparam }),
+  });
   const searchGames = await res.json();
   return {
     props: {

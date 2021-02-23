@@ -7,9 +7,7 @@ const spesificGame = ({ data, lang }) => {
     // if (data.title) {
     //   setMetaTitle(data.title);
     // }
-    fetch(
-      `https://turktorrentoyunapi.herokuapp.com/updateviewcount/${data.url}`
-    );
+    fetch(`https://turktorrentoyun.herokuapp.com/updateviewcount/${data.url}`);
   }, [data]);
   return (
     <>
@@ -23,7 +21,7 @@ const spesificGame = ({ data, lang }) => {
 export default spesificGame;
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://turktorrentoyunapi.herokuapp.com/api/links");
+  const res = await fetch("https://turktorrentoyun.herokuapp.com/api/links");
   const data = await res.json();
   const paths = data.map((item) => {
     return {
@@ -37,7 +35,7 @@ export const getStaticPaths = async () => {
 };
 export const getStaticProps = async (ctx) => {
   const res = await fetch(
-    `https://turktorrentoyunapi.herokuapp.com/api/singlegamebyurl/${ctx.params.url}`
+    `https://turktorrentoyun.herokuapp.com/api/singlegamebyurl/${ctx.params.url}`
   );
   const data = await res.json();
 
