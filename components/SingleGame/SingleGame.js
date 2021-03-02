@@ -9,10 +9,13 @@ const SingleGame = ({ data, lang }) => {
         <Head>
           <meta
             name="description"
-            content={`⭐⭐⭐⭐ ${data.title} torrentle indir. Reklamsız full torrent oyun torrentle oyun indir...`}
+            content={`\u2B50\u2B50\u2B50\u2B50  ${data.title} torrentle indir. Reklamsız full torrent oyun torrentle oyun indir...`}
           />
 
-          <title>{data.title} torrentle indir - Turk Torrent Oyun %100 ✔</title>
+          <title>
+            {data.title} torrentle indir - Turk Torrent Oyun %100
+            &#10004;&#65039;
+          </title>
         </Head>
         <h1 className={styles.title}>
           {lang === "TR"
