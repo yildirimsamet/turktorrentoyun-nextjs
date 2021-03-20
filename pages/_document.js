@@ -33,15 +33,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* <script
-            dangerouslySetInnerHTML={{
-              __html: `
-             
-          (adsbygoogle = window.adsbygoogle || []).push({});
-         
-          `,
-            }}
-          ></script> */}
         </body>
       </Html>
     );

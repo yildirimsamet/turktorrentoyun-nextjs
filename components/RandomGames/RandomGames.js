@@ -7,7 +7,7 @@ const RandomGames = ({ lang }) => {
   const [randomGamesState, setRandomGamesState] = useState([]);
   const [loading, setLoading] = useState(false);
   const getData = async () => {
-    fetch("https://turktorrentoyun.herokuapp.com/randomsix")
+    fetch("https://turktorrentoyun.herokuapp.com/api/randomsix")
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);
@@ -15,7 +15,7 @@ const RandomGames = ({ lang }) => {
       });
   };
   useEffect(() => {
-    fetch("https://turktorrentoyun.herokuapp.com/randomsix")
+    fetch("https://turktorrentoyun.herokuapp.com/api/randomsix")
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);

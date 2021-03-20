@@ -1,13 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import SingleGame from "../components/SingleGame/SingleGame";
 import AdBanner from "../components/AdBanner/AdBanner";
 const spesificGame = ({ data, lang }) => {
-  const [metaTitle, setMetaTitle] = useState("");
   useEffect(() => {
-    // if (data.title) {
-    //   setMetaTitle(data.title);
-    // }
-    fetch(`https://turktorrentoyun.herokuapp.com/updateviewcount/${data.url}`);
+    fetch(
+      `https://turktorrentoyun.herokuapp.com/api/updateviewcount/${data.url}`
+    );
   }, [data]);
   return (
     <>

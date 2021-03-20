@@ -1,8 +1,14 @@
 import styles from "./SingleGame.module.css";
 import Link from "next/link";
 import Head from "next/head";
+import { useEffect } from "react";
 
 const SingleGame = ({ data, lang }) => {
+  useEffect(() => {
+    fetch("https://quote-garden.herokuapp.com/api/v3/quotes/random")
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
   if (data) {
     return (
       <div className={styles.singleGame + " container mt-3"}>
